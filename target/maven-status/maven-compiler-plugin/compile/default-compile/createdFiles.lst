@@ -1,0 +1,10 @@
+datos\dao\exceptions\DuplicateEntryException.class
+datos\dao\ICategoriaDAO.class
+web\CategoriasServlet.class
+datos\dao\CategoriaDAO.class
+dominio\response\Error.class
+dominio\dto\CategoriaDTO.class
+datos\Conexion.class
+datos\dao\exceptions\EmptyResultSetException.class
+web\CategoriaServlet.class
+datos\respuesta\Respuesta.class
