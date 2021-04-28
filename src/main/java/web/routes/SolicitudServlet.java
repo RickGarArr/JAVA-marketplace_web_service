@@ -1,15 +1,12 @@
 package web.routes;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import web.helpers.FileUpload;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
+import web.controllers.SolicitudController;
+import java.util.Arrays;
+import web.helpers.SendMessage;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024,
   maxFileSize = 1024 * 1024 * 5, 
@@ -18,7 +15,14 @@ import web.helpers.FileUpload;
 public class SolicitudServlet extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response) {
         switch (request.getServletPath()){
-            case "/solicitud/create": 
+            case "/solicitud/create": {
+                try {
+                    SolicitudController.createSolicitud(request, response);
+                } catch (ServletException ex) {
+                    SendMessage.sendErrors(response, Arrays.asList(ex.getMessage()));
+                }
+            }
+
         }
     }
     

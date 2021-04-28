@@ -7,7 +7,7 @@ import web.helpers.exceptions.InvalidPatternException;
 public abstract class ValidarPattern {
     
     private static final String REGEX_EMAIL = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
-    private static final String REGEX_TELEFONO = "/^(\\(\\+?\\d{2,3}\\)[\\*|\\s|\\-|\\.]?(([\\d][\\*|\\s|\\-|\\.]?){6})(([\\d][\\s|\\-|\\.]?){2})?|(\\+?[\\d][\\s|\\-|\\.]?){8}(([\\d][\\s|\\-|\\.]?){2}(([\\d][\\s|\\-|\\.]?){2})?)?)$/";
+    private static final String REGEX_TELEFONO = "^(\\+52|0034|34)?[6789]\\d{8}$";
     
     public static void validarEmail(String email) throws InvalidPatternException {
         Pattern pattern = Pattern.compile(REGEX_EMAIL);

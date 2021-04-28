@@ -27,13 +27,8 @@ public class Conexion {
         return dataSource;
     }
     
-    public static Connection getConexion() {
-        Connection conexion = null;
-        try {
-            conexion = Conexion.getDataSource().getConnection();
-        } catch (SQLException ex) {
-            ex.printStackTrace(System.out);
-        }
+    public static Connection getConexion() throws SQLException {
+        Connection conexion = Conexion.getDataSource().getConnection();
         return conexion;
     }
     

@@ -19,10 +19,11 @@ public class UsuarioAccess {
     }
     
     public int insertUsuario(UsuarioModel usuario) throws DuplicateEntryException {
-        Connection conexion = this.conexionTransaccional == null ? Conexion.getConexion() : this.conexionTransaccional;
+        Connection conexion = null;
         PreparedStatement preparedStatement = null;
         int result = 0;
         try {
+            conexion = this.conexionTransaccional == null ? Conexion.getConexion() : this.conexionTransaccional;
             preparedStatement = conexion.prepareStatement(INSERT);
             preparedStatement.setString(1, usuario.getEmail());
             preparedStatement.setString(2, usuario.getTelefono());

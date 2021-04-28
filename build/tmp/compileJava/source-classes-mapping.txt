@@ -1,38 +1,56 @@
-web/helpers/SendErrors.java
- web.helpers.SendErrors
-web/routes/SolicitudServlet.java
- web.routes.SolicitudServlet
-web/helpers/FileUpload.java
- web.helpers.FileUpload
-web/controllers/SolicitudController.java
- web.controllers.SolicitudController
-datos/conexion/Conexion.java
- datos.conexion.Conexion
+datos/access/result/InsertResult.java
+ datos.access.result.InsertResult
+web/helpers/SendMessage.java
+ web.helpers.SendMessage
+datos/models/DocumentosModel.java
+ datos.models.DocumentosModel
+web/controllers/AdministradorController.java
+ web.controllers.AdministradorController
+web/helpers/exceptions/InvalidPatternException.java
+ web.helpers.exceptions.InvalidPatternException
+datos/access/exceptions/GeneralException.java
+ datos.access.exceptions.GeneralException
+web/helpers/ValidarParametros.java
+ web.helpers.ValidarParametros
+datos/models/UsuarioModel.java
+ datos.models.UsuarioModel
 web/helpers/PasswordAuth.java
  web.helpers.PasswordAuth
 datos/access/exceptions/DuplicateEntryException.java
  datos.access.exceptions.DuplicateEntryException
 web/helpers/ValidarClave.java
  web.helpers.ValidarClave
-datos/access/UsuarioAccess.java
- datos.access.UsuarioAccess
-web/controllers/exceptions/NullParameterValueException.java
- web.controllers.exceptions.NullParameterValueException
 web/controllers/exceptions/InvalidClaveException.java
  web.controllers.exceptions.InvalidClaveException
-datos/models/UsuarioModel.java
- datos.models.UsuarioModel
-web/helpers/ValidarParametros.java
- web.helpers.ValidarParametros
-web/helpers/ValidarPattern.java
- web.helpers.ValidarPattern
-web/helpers/exceptions/InvalidPatternException.java
- web.helpers.exceptions.InvalidPatternException
-datos/models/DocumentosModel.java
- datos.models.DocumentosModel
-datos/models/SolicitudModel.java
- datos.models.SolicitudModel
-web/controllers/AdministradorController.java
- web.controllers.AdministradorController
+datos/models/CategoriaModel.java
+ datos.models.CategoriaModel
+web/controllers/exceptions/NullParameterValueException.java
+ web.controllers.exceptions.NullParameterValueException
 web/routes/AdministradorRotes.java
  web.routes.AdministradorRotes
+web/helpers/GenerarNombreUnico.java
+ web.helpers.GenerarNombreUnico
+datos/access/UsuarioAccess.java
+ datos.access.UsuarioAccess
+web/helpers/ValidarPattern.java
+ web.helpers.ValidarPattern
+datos/access/DocumentosAccess.java
+ datos.access.DocumentosAccess
+datos/conexion/Conexion.java
+ datos.conexion.Conexion
+datos/models/SolicitudModel.java
+ datos.models.SolicitudModel
+web/helpers/datos/ReadWriteFile.java
+ web.helpers.datos.ReadWriteFile
+web/helpers/FileUpload.java
+ web.helpers.FileUpload
+datos/access/SolicitudAccess.java
+ datos.access.SolicitudAccess
+datos/access/procedures/SolicitudProcedures.java
+ datos.access.procedures.SolicitudProcedures
+web/routes/SolicitudServlet.java
+ web.routes.SolicitudServlet
+web/helpers/DateFormat.java
+ web.helpers.DateFormat
+web/controllers/SolicitudController.java
+ web.controllers.SolicitudController

@@ -22,20 +22,28 @@ public class SolicitudModel {
     public SolicitudModel(String estado) {
         this.estado = estado;
     }
-
-    public SolicitudModel(String email, String nombre, String telefono, int id_documentos) {
+    
+    public SolicitudModel(String email, String nombre, String telefono) {
         this.email = email;
         this.nombre = nombre;
         this.telefono = telefono;
+    }
+    
+    public SolicitudModel(String email, String nombre, String telefono, Date fecha_creacion) {
+        this.email = email;
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.fecha_creacion = fecha_creacion;
+    }
+
+    public SolicitudModel(String email, String nombre, String telefono, int id_documentos) {
+        this(email, nombre, telefono);
         this.id_documentos = id_documentos;
     }
 
     public SolicitudModel(int id_solicitud, String email, String nombre, String telefono, int id_documentos, String estado, Date fecha_creacion) {
+        this(email, nombre, telefono, id_documentos);
         this.id_solicitud = id_solicitud;
-        this.email = email;
-        this.nombre = nombre;
-        this.telefono = telefono;
-        this.id_documentos = id_documentos;
         this.estado = estado;
         this.fecha_creacion = fecha_creacion;
     }

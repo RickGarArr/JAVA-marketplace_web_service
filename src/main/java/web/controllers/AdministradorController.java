@@ -41,7 +41,7 @@ public class AdministradorController {
         } catch (IOException | NoSuchAlgorithmException | InvalidKeySpecException ex) {
             ex.printStackTrace(System.out);
         } catch (NullParameterValueException | InvalidClaveException | InvalidPatternException | DuplicateEntryException ex) {
-            SendErrors.sendErrors(response, Arrays.asList(ex.getMessage()));
+            SendMessage.sendErrors(response, Arrays.asList(ex.getMessage()));
         }
     }
 }
