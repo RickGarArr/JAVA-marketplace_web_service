@@ -14,13 +14,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import web.controllers.exceptions.NullParameterValueException;
-import web.helpers.DateFormat;
-import web.helpers.FileUpload;
-import web.helpers.SendMessage;
-import web.helpers.ValidarParametros;
-import web.helpers.ValidarPattern;
-import web.helpers.datos.FilesHelper;
+import helpers.validators.exceptions.NullParameterValueException;
+import helpers.DateHelper;
+import helpers.files.FileUpload;
+import helpers.response.SendMessage;
+import helpers.validators.ValidarParametros;
+import helpers.validators.ValidarPattern;
+import helpers.files.FilesHelper;
 import web.helpers.exceptions.InvalidPatternException;
 
 @MultipartConfig()
@@ -33,7 +33,7 @@ public class SolicitudController {
             String[] parametros = {"nombre", "email", "telefono"};
             FileUpload fu = new FileUpload("solicitudes");
             Date fecha = new Date();
-            String folder = DateFormat.getDateFormat("YYYYMMddhhmmss");
+            String folder = DateHelper.getDateFormat("yyyyMMddHHmmss");
         try {
             Map<String, Part> partValues = ValidarParametros.validarPartes(partes, extValidas ,request);
             Map<String, String> parameterValues = ValidarParametros.validarParametros(parametros, request);

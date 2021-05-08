@@ -4,6 +4,7 @@ import datos.access.exceptions.DuplicateEntryException;
 import datos.access.result.InsertResult;
 import datos.conexion.Conexion;
 import datos.models.SolicitudModel;
+import helpers.DateHelper;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -48,7 +49,7 @@ public class SolicitudAccess {
                         resultSet.getString("telefono"),
                         resultSet.getInt("id_documentos"),
                         resultSet.getString("estado"),
-                        resultSet.getDate("fecha_creacion"));
+                        DateHelper.fromSQLDatetime(resultSet.getTimestamp("fecha_creacion")));
                 solicitudes.add(solicitud);
             }
         } catch (SQLException ex) {
@@ -72,13 +73,13 @@ public class SolicitudAccess {
             preparedStatement = connection.prepareStatement(SELECT_BY_ID);
             preparedStatement.setInt(1, solicitud.getId_solicitud());
             resultSet = preparedStatement.executeQuery();
-            if (resultSet.first()) {
+            if (resultSet.next()) {
                 solicitud.setNombre(resultSet.getString("nombre"));
                 solicitud.setEmail(resultSet.getString("email"));
                 solicitud.setTelefono(resultSet.getString("telefono"));
                 solicitud.setId_documentos(resultSet.getInt("id_documentos"));
                 solicitud.setEstado(resultSet.getString("estado"));
-                solicitud.setFecha_creacion(resultSet.getDate("fecha_creacion"));
+                solicitud.setFecha_creacion(DateHelper.fromSQLDatetime(resultSet.getTimestamp("fecha_creacion")));
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
@@ -107,9 +108,7 @@ public class SolicitudAccess {
             preparedStatement.setString(3, solicitud.getTelefono());
             preparedStatement.setInt(4, solicitud.getId_documentos());
             if(solicitud.getFecha_creacion() != null) {
-                SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd hh:mm:ss");
-                String fecha = format.format(solicitud.getFecha_creacion());
-                preparedStatement.setString(5, fecha);
+                preparedStatement.setString(5, DateHelper.getDateTime(solicitud.getFecha_creacion()));
             }
             int affectedRows = preparedStatement.executeUpdate();
             if (affectedRows == 0) throw new SQLException("Error al crear solicitud");

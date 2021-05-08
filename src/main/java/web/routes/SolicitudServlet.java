@@ -6,7 +6,7 @@ import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 import web.controllers.SolicitudController;
 import java.util.Arrays;
-import web.helpers.SendMessage;
+import helpers.response.SendMessage;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024,
   maxFileSize = 1024 * 1024 * 5, 
